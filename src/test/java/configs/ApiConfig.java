@@ -3,7 +3,7 @@ package configs;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "file:/tmp/token.properties",
+        "file:C:\\Users\\kurga\\Desktop\\token.properties",
         "classpath:token.properties"
 })
 public interface ApiConfig extends Config {

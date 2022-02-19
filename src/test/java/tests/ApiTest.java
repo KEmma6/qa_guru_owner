@@ -4,7 +4,6 @@ import configs.ApiConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -24,11 +23,11 @@ public class ApiTest {
 
     @Test
     public void tmpFileTest() throws IOException {
-        String token = "test1234test";
-        Path props = Paths.get("tmp/token1.properties");
-        Files.write(props, token.getBytes(StandardCharsets.UTF_8));
+        String text = "token=test1234test";
+        Path props = Paths.get("C:\\Users\\kurga\\Desktop\\token.properties");
+        Files.write(props, text.getBytes(StandardCharsets.UTF_8));
         ApiConfig apiConfig = ConfigFactory.create(ApiConfig.class, System.getProperties());
-        assertThat(apiConfig.token()).isEqualTo("b1ff587b-b80b-4fcd-a11f-4fb57d737a59");
+        assertThat(apiConfig.token()).isEqualTo("test1234test");
 
         Files.delete(props);
     }
